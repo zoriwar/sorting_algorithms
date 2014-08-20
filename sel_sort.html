@@ -1,0 +1,30 @@
+<script>
+
+function select_sort(array) {
+
+var length = array.length
+
+for (var boundary = 0; boundary < length; boundary++) {
+	var min = array[boundary];
+	var min_index = boundary;
+	for (var i=boundary; i<length; i++) {
+		if (array[i] < min) {
+			min = array[i];
+			min_index = i; } }
+	array[min_index] = array[boundary];
+	array[boundary] = min; }
+return array;
+}
+
+
+var random_array = [];
+for (var k=0; k<100; k++) {
+	rand_num = Math.floor( 10001 * Math.random() );
+	random_array.push(rand_num);
+}
+console.log(select_sort(random_array)) ;
+
+
+</script>
+
+
